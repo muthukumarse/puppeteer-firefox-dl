@@ -2,6 +2,7 @@
 
 # Puppeteer for Firefox
 
+> Just added PUPPETEER_SKIP_CHROMIUM_DOWNLOAD to skip to download firefox from internet
 > Use Puppeteer's API with Firefox
 
 > **BEWARE**: This project is experimental. 🐊 live here. [Is Puppeteer-Firefox Ready?](https://aslushnikov.github.io/ispuppeteerfirefoxready/)
@@ -13,7 +14,7 @@
 To use Puppeteer with Firefox in your project, run:
 
 ```bash
-npm i puppeteer-firefox
+npm i puppeteer-firefox-dl
 # or "yarn add puppeteer-firefox"
 ```
 
@@ -21,18 +22,18 @@ Note: When you install puppeteer-firefox, it downloads a [custom-built Firefox](
 
 ### Usage
 
-**Example** - navigating to https://example.com and saving a screenshot as *example.png*:
+**Example** - navigating to https://example.com and saving a screenshot as _example.png_:
 
 Save file as **example.js**
 
 ```js
-const pptrFirefox = require('puppeteer-firefox');
+const pptrFirefox = require("puppeteer-firefox");
 
 (async () => {
   const browser = await pptrFirefox.launch();
   const page = await browser.newPage();
-  await page.goto('https://example.com');
-  await page.screenshot({path: 'example.png'});
+  await page.goto("https://example.com");
+  await page.screenshot({ path: "example.png" });
   await browser.close();
 })();
 ```
@@ -43,11 +44,9 @@ Execute script on the command line
 node example.js
 ```
 
-
 ### API Status
 
 Current tip-of-tree status of Puppeteer-Firefox is availabe at [isPuppeteerFirefoxReady?](https://aslushnikov.github.io/ispuppeteerfirefoxready/)
-
 
 ### Credits
 
